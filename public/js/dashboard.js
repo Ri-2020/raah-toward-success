@@ -81,21 +81,21 @@ updates.addEventListener("click", () => {
   }
 });
 
-// function urlify(text) {
-//   var urlRegex = /(https?:\/\/[^\s]+)/g;
-//   // return text.replace(urlRegex, function(url) {
-//   //   return '<a href="' + url + '">' + url + '</a>';
-//   // })
-//   return text.replace(urlRegex, '<a href="$1">$1</a>');
-// }
+function urlify(text) {
+  var urlRegex = /(https?:\/\/[^\s]+)/g;
+  // return text.replace(urlRegex, function(url) {
+  //   return '<a href="' + url + '">' + url + '</a>';
+  // })
+  return text.replace(urlRegex, '<a target="blank" href="$1">$1</a>');
+}
 
-// const extracturls = () => {
-//   for (var i in submissionTexts) {
-//     submissionTexts[i].innerHTML = urlify(submissionTexts[i].innerHTML);
-//   }
-// };
+const extracturls = () => {
+  for (var i in submissionTexts) {
+    submissionTexts[i].innerHTML = urlify(submissionTexts[i].innerHTML);
+  }
+};
 
-// extracturls();
+extracturls();
 var namee;
 var user;
 var rollNo;
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#name").innerHTML = user.name;
   rollNo = document.querySelector("#rollNo").innerHTML = user.rollNo;
   year =
-    rollNo.substring(0, 2) == "21" ? (year = "1st Year") : (year = "2nd Year");
+    rollNo.substring(0, 2) == "21" ? (year = "2nd Year") : (year = "3rd Year");
   branch =
     rollNo.substring(6, 9) == "013"
       ? (branch = "Information Technology")
